@@ -1,0 +1,37 @@
+.body-container{
+    background-color: rgb(249, 241, 229);
+    /* background-color: rgb(234, 144, 8); */
+    box-shadow: #707070 0px -5px 31px 1px;
+        position: fixed;
+            width: 100%;
+            top: 0px;
+            z-index: 1;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    font-size: x-large;
+}
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.padding{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.padding-20{
+    padding-left: 20px;
+}
+.cart-num{
+text-decoration: none;
+    position: absolute;
+    top: -5px;
+    right: 221px;
+    font-size: 15px;
+    color: black;
+}
+.cardbutton{
+    display: flex;
+}
