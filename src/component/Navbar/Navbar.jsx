@@ -1,12 +1,14 @@
 import "./Navbar.css"
 import React  from "react";
 import { Link } from "react-router-dom"
-import { useCart } from "../../context";
-
+import { useCart, useWishlist } from "../../context";
+import { logo } from "../../Images";
 function Navbar() {
 
 const { cartState } = useCart()
-const { cart  } = cartState
+  const { cart } = cartState
+  const { wishState } = useWishlist()
+  const {wishlistItem} = wishState
 
   
   return (
@@ -14,25 +16,29 @@ const { cart  } = cartState
           <nav  className="d-flex">
         <div className="padding-20">
           <Link to="/">
-            <h1>booooks</h1>
-
+         <img src={logo} alt="" className="logo" />
           </Link>
-              </div>
+        </div>
 
         <div className="d-flex padding">
 
          
           <Link to="/Cart ">
-              <i className="bi bi-cart3 icon padding"></i>
-            <p className="cart-num" >{cart.length}</p>
+            <i className="bi bi-cart3 icon padding"></i>
+            
+            <p className="cart-num" >{cart.length} </p>
           </Link>
         
 
 
-                <a href=""><i className="bi bi-heart icon padding"></i></a>
+          <Link to="/Wishlist">
+            <i className="bi bi-heart icon padding"></i>
+            <p className="wish-num" >{wishlistItem.length}</p>
+
+          </Link>
             
                   <h3 className="padding">user name</h3>
-                  <button className="padding">Login</button>
+                  <button className="cardbutton padding">Login</button>
               </div>
           </nav>
          

@@ -1,4 +1,7 @@
-
+import background from './Assets/background.png'
+import logo from "./Assets/logo.png"
+import wishlist from './Assets/wishlist.png'
+import wishlist_fill from './Assets/wishlist-fill.png'
 import doglapan from "./Assets/doglapan.jpg"
 import audiobook12 from "./Assets/audiobook-banner.jpg"
 import banner2 from './Assets/banners -2.jpg'
@@ -14,9 +17,8 @@ import thecompany from './Assets/the company we keep.jpg'
 import life from './Assets/life.jpg'
 const zakir = require('../Images/Assets/zakir.png');
 
-
-
 export {
-    doglapan, audiobook12, zakir, banner2, banner1, book1,
-    gardenUp , gautamAdani, multibagger , iAmonir , sub_banner1 , sub_banner2 , thecompany , life
+     wishlist , wishlist_fill,doglapan, audiobook12, zakir, banner2, banner1, book1,
+    gardenUp, gautamAdani, multibagger, iAmonir, sub_banner1, sub_banner2, thecompany, life, logo ,background
+    
 }

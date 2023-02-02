@@ -1,22 +1,28 @@
-// import React, { useReducer }  from 'react'
-// import {Cartreducer , initalState} from '../../reducer/Index'
+import "./singleproduct.css"
+import React from 'react'
+import { useParams } from 'react-router-dom';
+import { Navbar , Footer } from '../../component';
+import { useStore } from '../../context';
+import { SingleproductView } from './singleProductVeiw';
 
-// const Singleproduct = ({item , clickhandler}) => {
+
+
+function Singleproduct() {
+    const { productId } = useParams()
+    const { storeState } = useStore()
+    const Store = storeState.storeItem
     
-//     const [state , dispatch] = useReducer(Cartreducer , initalState)
-   
+    console.log(productId)
+   const products = [Store.find((element) => element._id === productId)];
 
-
-//     const {_id ,image , title , author , price } = item
-//   const payload = { payload: item }
   
-//     return <div key={_id}>
-//               <img src={image} alt="" width="200px" />
-//               <p>{title}</p>
-//               <p>{author}</p>
-//               <p>{price}</p>
-//               <button onClick={()=>dispatch({ type : "Add-to-cart" , payload})} >Add to Cart</button>
-//               <button onClick={clickhandler} >Add to Cart</button>
-//             </div>
-// }
-// export {Singleproduct};
+    return <>
+    <Navbar />
+    <SingleproductView products={products} productId={productId} />
+    <Footer/>
+       
+      
+    </>
+}
+export {Singleproduct};
+ 

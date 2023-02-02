@@ -1,13 +1,15 @@
 import "./homepage.css"
 import React from "react";
 import {Link} from "react-router-dom"
-import { Navbar } from "../../component";
+import { Footer, Navbar } from "../../component";
 import {  audiobook12, banner1, doglapan, gautamAdani, iAmonir, sub_banner1, sub_banner2, zakir , life, banner2 } from "../../Images";
 
 function Home() {
   return (
-    <div>
-      <Navbar  />
+    <div className="main-body">
+      <Navbar />
+    <div className="main">
+      
       <div >
         <img src={banner1} alt=""  className="banner"/>
       </div>
@@ -32,32 +34,32 @@ function Home() {
 
       <div className="product-container-home ">
         
-        <div>
+        <div className="container-home">
           <img src={doglapan} alt="" className="books" />
           <h4 className="margin0">Doglapan</h4>
           <p className="margin0">Ashneer Grower</p>
          </div>
         
-        <div>
+        <div className="container-home">
           <img src={zakir} alt="" className="books" />
           <h4 className="margin0">Zikr</h4>
           <p className="margin0">Muzafar Ali</p>
         </div>
 
-        <div>
+        <div className="container-home">
           <img src={gautamAdani} alt="" className="books" />
           <h4 className="margin0">Gautam Adani</h4>
           <p className="margin0">R.N. Bhaskar</p>
         </div>
 
-        <div>
+        <div className="container-home">
           <img src={iAmonir} alt="" className="books" />
            <h4 className="margin0">I An Onir</h4>
           <p className="margin0">Irene Dhar Malik</p>
 
         </div>
         
-        <div>
+        <div className="container-home">
           <img src={life} alt="" className="books" />
            <h4 className="margin0">Life Amazing Secrets</h4>
           <p className="margin0">Gaur Gopal Das</p>
@@ -69,9 +71,12 @@ function Home() {
       <div>
         <img src={banner2} alt="" className="s-banner" />
       </div>
+      </div>
        
         
+      <Footer/>
     </div>
+
   );
 }
 export  {Home};

@@ -16,11 +16,11 @@ const SortreducerFunc = (state, action) => {
             return{ ...state ,Discountfilter : action.payload }
         case "CLEAR-FILTER":
             return {
-                ...state, filter: { ...state.filter,
-                 sortby:  null , 
-                 Categoryfilter:  null,
-                 Discountfilter: null
-                }
+                ...state,
+                 sortby: "", 
+                 Categoryfilter:  "",
+                 Discountfilter: ""
+            
             }
         default:
             return state;

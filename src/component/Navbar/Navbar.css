@@ -1,17 +1,25 @@
+:root {
+    --primary-color: rgb(55, 118, 116);
+    --secondary-color :rgb(26, 54, 33);
+    --third-color :rgb(0, 0, 0);
+    --white-color :rgb(255, 255, 255);
+}
 .body-container{
-    background-color: rgb(249, 241, 229);
-    /* background-color: rgb(234, 144, 8); */
-    box-shadow: #707070 0px -5px 31px 1px;
-        position: fixed;
-            width: 100%;
-            top: 0px;
-            z-index: 1;
+    background-color:var(--white-color);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+box-shadow: 4px 3px 7px -5px;
+  
+   
 }
 .icon{
     width: 20px;
     height: 20px;
     font-size: x-large;
 }
+
 .d-flex{
     display: flex;
     justify-content: space-between;
@@ -20,6 +28,7 @@
 .padding{
     padding-left: 10px;
     padding-right: 10px;
+    color: var(--third-color);
 }
 .padding-20{
     padding-left: 20px;
@@ -30,8 +39,41 @@ text-decoration: none;
     top: -5px;
     right: 221px;
     font-size: 15px;
-    color: black;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+     color: var(--white-color);
+     background-color: var(--third-color);
+}
+.wish-num{
+    text-decoration: none;
+        position: absolute;
+        top: -4px;
+        right: 171px;
+        font-size: 15px;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        color: var(--white-color);
+        background-color: var(--third-color);
 }
 .cardbutton{
-    display: flex;
+border: none;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--white-color);
+    font-size: 17px;
+
+
+    
 }
+.logo{
+width: 170px;
+
+}
+
+
+

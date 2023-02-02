@@ -1,21 +1,13 @@
-// import {useParams} from "react-router-dom"
-// import { products } from "../../backend/db/products";
 
 const initalState = {
-    // CartItem: 0,
-    Totalprice : 0,
+    Totalprice: 0,
     cart: [],
-    // addbutton: "Add to Cart"
+    AfterDiscounted_Price : null
+
+    
+   
+
 }
-// const { productId } = useParams();
-
-// function getProductDetails(cart, productId) {
-//     const { productId } = useParams();
-//     return cart.find((products) => products._id === productId);
-// }
-
-// const product = getProductDetails(products, productId);
-// console.log(product)
 
 function Cartreducer(cartState, action) {
     switch (action.type) {
@@ -23,22 +15,47 @@ function Cartreducer(cartState, action) {
             return {
                 ...cartState,
                 cart: [...cartState.cart, action.payload],
-                // cart: [...state.product, action.payload],
-                // cart: [ ...state.cart ,find(() => action.payload._id === "_id"), action.payload],
-                // CartItem: state.CartItem + 1,
-                Totalprice : Number(cartState.Totalprice) + Number(action.payload.price),
-                // addbutton:  action.addbutton 
+            };
+        case "INCREASE-QTY":
+            return {
+                ...cartState,
+                cart: cartState.cart.map((items) =>
+                    items._id === action.payload ? { ...items, Quantity: items.Quantity + 1 } : items,),
+                
                 
             };
-            
-            
-            default:
-                return cartState;
+        case "DESCREASE-QTY":
+            return {
+                ...cartState,
+                cart: cartState.cart.map((items) =>
+                    items._id === action.payload ?
+                        items.Quantity > 1 ? { ...items, Quantity: items.Quantity - 1 } : { ...items, Quantity: 1 } : items
+                ),
                 
+               
+            };
+        case "REMOVE-FROM-CART":
+            return {
+                ...cartState,
+                cart: cartState.cart.filter(items => items._id !== action.payload),
+                Totalprice: Number(cartState.Totalprice) - Number(action.price),
+              
+            };
+        case "GET-ORIGINAL-PRICE":
+            const updatePrice = ((acc, curr) => acc + curr.intprice * curr.Quantity)
+            const initialprice = cartState.cart.reduce(updatePrice, 0)
+            return {
+                ...cartState, Totalprice: initialprice
+            };
+        case "GET-DISCOUNTED-PRICE":
+            const After_discounted_price = ((acc, curr) => acc + curr.price * curr.Quantity)
+            const Discounted_price = cartState.cart.reduce(After_discounted_price, 0)
+            return {
+                ...cartState ,  AfterDiscounted_Price : Discounted_price
             }
-            
-            
-            
+            default:
+                return cartState;    
+            }   
         }
       
 export {Cartreducer , initalState }

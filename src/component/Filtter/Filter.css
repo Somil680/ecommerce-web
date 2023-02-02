@@ -1,32 +1,20 @@
-
-.fillter-component{
-        border: 1px solid;
-            margin: 10px;
-            width: 197px;
-            height: 480px;
-            top: 70px;
-            position: fixed;
-}
-
 #price-sort{
-        border: 1px solid;
-            padding: 10px;
-            width: 84%;
-                height: 48px;
-            margin: 10px 15px 10px 15px;
+
+    padding: 10px;
+    width: 100%;
+    height: 48px;
+    margin-top: 30px;
         }
-.heading{
-    margin: 10px;
-}
 .clear-btn{
     padding: 10px ;
     margin: 10px;
-    background-color: rgb(234, 144, 8);
+    background-color: var(--secondary-color);
+    color: white;
     border: none;
 
 }
 .clear-btn:hover{
-    border: 1px solid rgb(234, 144, 8);
-    color: rgb(234, 144, 8);
+    border: 1px solid var(--secondary-color);
+    color:var(--secondary-color);
     background-color: white;
 }
