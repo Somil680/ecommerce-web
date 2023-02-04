@@ -1,13 +1,26 @@
+import React from 'react';
+
+const GetLocalStorageCartData = ()=> {
+    let LocalCartData = localStorage.getItem("BookiesCart")
+    if (LocalCartData === []) {
+        console.log(LocalCartData)
+        console.log(JSON.parse(LocalCartData))
+        return [];
+        
+    } else {
+        return JSON.parse(LocalCartData);
+    }
+}
 
 const initalState = {
     Totalprice: 0,
-    cart: [],
-    AfterDiscounted_Price : null
-
-    
-   
-
+    // cart: [],
+    cart: GetLocalStorageCartData(),
+    AfterDiscounted_Price : null,
+    CARTQty : null
 }
+
+
 
 function Cartreducer(cartState, action) {
     switch (action.type) {
@@ -53,9 +66,17 @@ function Cartreducer(cartState, action) {
             return {
                 ...cartState ,  AfterDiscounted_Price : Discounted_price
             }
+        case "GET-ALL-QTY-INCART":
+            const Totalcardqty = ((acc , curr) =>  acc + curr.Quantity)
+            const allQTY = cartState.cart.reduce(Totalcardqty, 0)
+            return {
+                ...cartState, CARTQty : allQTY
+            }
             default:
                 return cartState;    
-            }   
-        }
+    }   
+    
+}
+
       
 export {Cartreducer , initalState }

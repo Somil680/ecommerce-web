@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import "./Cart.css"
-
 import { background } from "../../Images/index"
 import { useCart } from "../../context";
-import { Navbar , Footer } from "../../component";
+import { Navbar , Footer, Price } from "../../component";
 import { CartmanagementView } from "./CartmanagementVeiw";
+import { Link } from "react-router-dom";
 
 function Cart() {
-const {cartState , dispatch} = useCart()
-  const { cart, Totalprice, AfterDiscounted_Price } = cartState
-  const SavingOnProduct = Totalprice - AfterDiscounted_Price;
 
-  
-const backgroundstyle = {
+const {cartState , dispatch} = useCart()
+  const { cart} = cartState
+  const backgroundstyle = {
   display : 'block',
   backgroundImage: `url(${background})`,
   backgroundRepeat: 'no-repeat',
@@ -22,10 +20,10 @@ const backgroundstyle = {
   }
   useEffect(() => {
     dispatch({type : "GET-ORIGINAL-PRICE"})
-    dispatch({type : "GET-DISCOUNTED-PRICE"})
+    dispatch({ type: "GET-DISCOUNTED-PRICE" })
+    dispatch({type : "GET-ALL-QTY-INCART"})
   } , [cart])
-
-
+ 
 return <>
   <Navbar />
   
@@ -37,36 +35,16 @@ return <>
       </div>
 
 <div className="totalpage">
-      <h3 className="totalpage-h3" >Price Detail</h3><hr />
-  <div className="s-flex height">
-      <h3>Price </h3>
-      <h3>Rs.{Totalprice} </h3>
-          
-  </div>
-  <div className="s-flex  height">
-      <h3>Discount: </h3>
-          <h3 className="color">-Rs.{SavingOnProduct}</h3>
-  </div>
-  <div className="s-flex height ">
-      <h3 > Delivery Charges</h3>
-      <h3 className="color">FREE</h3>
-  </div>
-  <div className="s-flex sep-part">
-      <h3>Total Amount </h3>
-      <h3>Rs.{ AfterDiscounted_Price}</h3>
-  </div>
-  <div className="s-flex color inbold ">
-          <p>You will be save ₹{SavingOnProduct } on this order</p>
-  </div>
+      <Price />
           <div className="s-flex">
-            <button>Place Order</button>
+            <button className=""><Link to="/Checkout">Check Out</Link></button>
           </div> 
         
 </div>
 </div>
 </div>
 </div>
-  <Footer  style={{ position :" absolute" , bottom :"0px" }} />
+  <Footer />
 </>
 }
 export {Cart}

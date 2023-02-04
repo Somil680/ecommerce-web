@@ -16,7 +16,7 @@ return <>
 
 <div className="sort-button">
 <select name="Sort " id="price-sort" value={state.sortby} onChange={(e) => dispatchSort({ type: "Sortby", payload: e.target.value })} >
-        <option id="option" checked value="">Default</option>
+        <option id="option" checked value="/">Default</option>
         <option id="option"  value="Low-to-High">Low to High</option>
         <option id="option"  value="High-to-Low">High to Low</option>
     </select>
@@ -24,7 +24,7 @@ return <>
 
 <div className="sort-button">
     <select name=" Category" id="price-sort" value={state.Categoryfilter} onChange={(e) => dispatchSort({ type: "Category", payload: e.target.value })} >
-        <option id="option" checked value="">Chooes Category</option>
+        <option id="option" checked value="/">Chooes Category</option>
         <option id="option"  value="Friction-Book">Friction</option>
         <option id="option"  value="Non-Friction-Book">Non-Friction</option>
         <option id="option"  value="Horror">Horror</option>
@@ -34,7 +34,7 @@ return <>
 
 <div className="sort-button">
     <select name=" Category" id="price-sort"value={state.Discountfilter} onChange={(e) => dispatchSort({ type: "Discount", payload: e.target.value })} >
-        <option id="option" checked value="">Discount</option>
+        <option id="option" checked value="/">Discount</option>
         <option id="option"  value="10%">10% and Above</option>
         <option id="option"  value="20%">20% and Above</option>
         <option id="option"  value="30%">30% and Above</option>

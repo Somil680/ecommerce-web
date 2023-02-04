@@ -1,0 +1,23 @@
+.LoginCompoenent{
+    display: flex;
+    margin: 100px;
+}
+.body-container {
+    background-color: var(--white-color);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    box-shadow: 4px 3px 7px -5px;
+}
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.padding-20 {
+    padding-left: 20px;
+}
+.Login-Image{
+    
+}
