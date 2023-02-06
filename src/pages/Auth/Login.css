@@ -1,6 +1,6 @@
 /* NAVBAR */
 .body-container {
-    background-color: var(--white-color);
+    background-color: var(--navbar-color);
     position: fixed;
     width: 100%;
     top: 0px;

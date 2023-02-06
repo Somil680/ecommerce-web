@@ -21,38 +21,46 @@ function Home() {
         
             
         <div className="container-home">
+               <Link to="/productlist">
           <img src={multibagger} alt="" className="books" />
           <h4 className="margin0">Multibegger Stock</h4>
           <p className="margin0">Prasenjit Paul</p>
-          
+          </Link>
          </div>
         
 
-        <div className="container-home">
+            <div className="container-home">
+                 <Link to="/productlist">
           <img src={gardenUp} alt="" className="books" />
           <h4 className="margin0">Garden UP</h4>
-          <p className="margin0">Dr Ekta Chaudhary</p>
+                <p className="margin0">Dr Ekta Chaudhary</p>
+                </Link>
         </div>
-         <div className="container-home  ex-btn">
+         <div className=" ex-btn">
+                <Link to="/productlist">
           
-          <button className="explore-button ">
-            <Link to="/productlist" className="ex-link">Explore more</Link>
+              <button className="explore-button ">
+                
+                  Explore more
             </button>
+                </Link>
          
         </div> 
 
-        <div className="container-home">
+            <div className="container-home">
+               <Link to="/productlist">
           <img src={thecompany} alt="" className="books" />
            <h4 className="margin0">The Company we Keep</h4>
           <p className="margin0">Divya Khanna</p>
-
+              </Link> 
         </div>
         
-        <div className="container-home">
+            <div className="container-home">
+                  <Link to="/productlist">
           <img src={book1} alt="" className="books" />
            <h4 className="margin0">Build Don't Talk</h4>
           <p className="margin0">Raj Shamani</p>
-
+</Link>
         </div>
 
     </div>

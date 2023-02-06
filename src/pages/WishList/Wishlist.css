@@ -2,8 +2,8 @@
 
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    top: 70px;
+   
+    margin-top: 70px;
 
     
 }

@@ -3,9 +3,10 @@
     --secondary-color :rgb(26, 54, 33);
     --third-color :rgb(0, 0, 0);
     --white-color :rgb(255, 255, 255);
+    --navbar-color :rgb(206, 207, 138);
 }
 .body-container{
-    background-color:var(--white-color);
+    background-color:var(--navbar-color);
     position: fixed;
     width: 100%;
     top: 0px;
@@ -27,53 +28,45 @@ box-shadow: 4px 3px 7px -5px;
 }
 .padding{
     padding-left: 10px;
-    padding-right: 10px;
-    color: var(--third-color);
+        padding-right: 10px;
+        color: var(--third-color);
+        display: flex;
 }
 .padding-20{
     padding-left: 20px;
 }
+.text{
+    text-decoration: none;
+}
 .cart-num{
 text-decoration: none;
-    position: absolute;
-    top: -5px;
-    right: 221px;
+    position: relative;
+    right: 10px;
+    bottom: 10px;
     font-size: 15px;
     border-radius: 10px;
     width: 20px;
     height: 20px;
     text-align: center;
-     color: var(--white-color);
-     background-color: var(--third-color);
+    color: var(--white-color);
+    background-color: var(--third-color);
 }
-.wish-num{
-    text-decoration: none;
-        position: absolute;
-        top: -4px;
-        right: 171px;
-        font-size: 15px;
-        border-radius: 10px;
-        width: 20px;
-        height: 20px;
-        text-align: center;
-        color: var(--white-color);
-        background-color: var(--third-color);
-}
-.cardbutton{
+
+.nav-log-btn{
 border: none;
-    background-color: var(--secondary-color);
+    background-color: var(--third-color);
     padding: 10px;
     border-radius: 10px;
     color: var(--white-color);
-    font-size: 17px;
-
-
-    
+    font-size: 17px;  
 }
 .logo{
 width: 170px;
 
 }
-
+.nav-cart-wish-icon{
+        display: flex;
+        align-items: center;
+}
 
 

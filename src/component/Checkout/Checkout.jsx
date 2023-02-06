@@ -29,7 +29,8 @@ return <>
     </div>))}</div>
         <div className="Checkout-price-data">
             <Price />
-            <Link>Place Order</Link>
+
+            <Link className='checkout-btn'>Place Order</Link>
  </div>     
     </div>
     <hr />

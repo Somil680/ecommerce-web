@@ -32,12 +32,20 @@
     justify-content: space-around;
     align-items: baseline;
 }
+.container-home:hover{
+  font-size: 15px;
+ opacity: 0.5;
+ cursor: pointer;
+}
 .container-home{
-  font-size: large;
+  size: 10px;
 
 }
 .margin0{
     margin: 0px ;
+    text-decoration: none;
+    color: black;
+    text-underline-offset: none;
 }
 .topheading{
     margin-left: 25px;
@@ -46,13 +54,8 @@
     margin: 20px;
 }
 .ex-btn{
-
-}
-.explore-button{
-    padding: 30px;
-    background-color: black;
-    margin: 30px;
-    height: 90px;
+border: 2px solid black;
+ border-radius: 4px;
 }
 
 .product-container-explore{
@@ -60,8 +63,16 @@
     align-items: center;
     justify-content: space-between;
 }
-.ex-link{
-        text-decoration: none;
+.explore-button{
+ padding: 15px;
+    background-color: black;
+    margin: 10px;
     color: white;
     font-size: 20px;
+    border-radius: 4px;
+}
+.explore-button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }

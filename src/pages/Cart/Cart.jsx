@@ -4,10 +4,12 @@ import { background } from "../../Images/index"
 import { useCart } from "../../context";
 import { Navbar , Footer, Price } from "../../component";
 import { CartmanagementView } from "./CartmanagementVeiw";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function Cart() {
-
+  const { auth } = useAuth()
+ 
 const {cartState , dispatch} = useCart()
   const { cart} = cartState
   const backgroundstyle = {
@@ -35,10 +37,12 @@ return <>
       </div>
 
 <div className="totalpage">
-      <Price />
-          <div className="s-flex">
-            <button className=""><Link to="/Checkout">Check Out</Link></button>
-          </div> 
+          <Price />
+          {auth.isAuth ?
+            <div className="check-out-btn">
+              <button className="checkout-btn"><Link className="checkout-btn" to="/Checkout">Check Out</Link></button>
+            </div>
+            : Navigate("/Login")}
         
 </div>
 </div>

@@ -24,25 +24,29 @@ const { cartState } = useCart()
       </div>
 <div className="d-flex padding">
 
-      <Link to="/Cart ">
-        <i className="bi bi-cart3 icon padding"></i>
-        <p className="cart-num" >{cart.length} </p>
+        <Link to="/Cart " className="text">
+        <div className="nav-cart-wish-icon">
+              <i className="bi bi-cart3 icon padding"></i>
+              {cart.length === 0 ? <p></p> :  <p className="cart-num" >{cart.length} </p> }
+          
+        </div>
       </Link>
         
-      <Link to="/Wishlist">
-        <div>
-          <i className="bi bi-heart icon padding"></i>
-          <p className="wish-num" >{wishlistItem.length}</p>
+      <Link to="/Wishlist" className="text">
+        <div className="nav-cart-wish-icon">
+            <i className="bi bi-heart icon padding"></i>
+           {wishlistItem.length === 0 ? <p></p> :   <p className="cart-num" >{wishlistItem.length}</p>}   
+        
         </div>
       </Link>
     <div>
       {isAuth ? <h3 className="padding">Hi ,{auth.userName}</h3> :
-          <h3 className="padding">Hi,User</h3>}
+          <h3 className="padding">Hi,</h3>}
     </div>
          
     <div>
       <Link to="/Login">
-        {isAuth ?  <button  onClick={()=> setAuth(auth => ({token:"",isAuth:false,userName:""}))}>Logout</button> : <button >Login</button>}
+        {isAuth ?  <button className="nav-log-btn"  onClick={()=> setAuth(auth => ({token:"",isAuth:false,userName:""}))}>Logout</button> : <button className="nav-log-btn" >Login</button>}
       </Link>
     </div>
   
