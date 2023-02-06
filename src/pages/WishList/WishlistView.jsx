@@ -1,39 +1,47 @@
 import "./Wishlist.css"
 import React from "react";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import { BsHeartFill  , BsHeart} from "react-icons/bs";
 import { useCart , useWishlist } from "../../context";
 import { findInArray } from "../../utensiles/find";
 import {  useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function WishlistVeiw({ products}) {
 
 const { _id, image, title, author, price, categoryName, intprice, discount } = products
 const { cartState , dispatch } = useCart()
 const { wishState, wishDispatch } = useWishlist()
-const Navigate = useNavigate()
+    const Navigate = useNavigate()
+    const {auth} =useAuth()
     
 const isInCart = findInArray(_id, cartState.cart)
-const cartHandler = (id, products) => {       
-if (isInCart) {
-    Navigate("/Cart")
-} else {
-    dispatch({
-    type: "Add-to-cart",
-    payload: products
- })
-    // toast.success('Added To Cart!');
-    console.log("add to cart")
-}}
+ const cartHandler = (id, products) => {
+if (auth.isAuth) {
+    if (isInCart) {
+         Navigate("/Cart")
+        } else {
+            dispatch({
+                type: "Add-to-cart",
+                payload: products
+        })
+        toast.success('Added To Cart!');
+            }
+        }else{toast.error("Something went wrong")}
+    }
 
 const isInWishlist = findInArray(_id, wishState.wishlistItem);
-const wishHandler = (id, products) => {
-if (isInWishlist) {
-// Navigate("/Wishlist")
-} else {
-    wishDispatch({ type: "Add-to-Wishlist", payload: products})
-    console.log("add to wishlist")
-}}
-        
+    const wishHandler = (id, products) => {
+        if (auth.isAuth) {
+            if (isInWishlist) {
+                Navigate("/Wishlist")
+            } else {
+                wishDispatch({ type: "Add-to-Wishlist", payload: products })
+                toast.success("add to wishlist")
+            }
+        }
+    }     
 return <>
 <div key={_id} className="item-grid" >       
 {isInWishlist ?

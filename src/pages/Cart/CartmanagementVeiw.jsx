@@ -1,6 +1,8 @@
 
 import React from "react";
 import "./Cart.css"
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import { useCart } from "../../context";
 import { MdDelete } from "react-icons/md";
 
@@ -9,12 +11,13 @@ import { MdDelete } from "react-icons/md";
 function CartmanagementView({products }) {
      const { _id, image, title, author, price, categoryName, intprice, discount  , Quantity} = products
     const {cartState , dispatch } = useCart()
-    const { cart} = cartState
+    const { cart } = cartState    
     
-    //  const Totalcardqty = ((acc , curr) =>  acc + curr.Quantity)
-    //  const toqty = cartState.cart.reduce(Totalcardqty , 0)
-    // console.log(toqty)
-    // <div><h3>Total Quantity : {toqty}</h3></div>
+    const Remove_from_cart = () => {
+        dispatch({ type: "REMOVE-FROM-CART", payload: _id, price: price })
+        toast.success("Removed from Cart")
+    }
+
      
 return <>
 <div key={_id} className="sub-container" >
@@ -37,7 +40,7 @@ return <>
         <p className="qty">{Quantity}</p>
         <button className="inc-btn" onClick={() => dispatch({ type: "DESCREASE-QTY", payload: _id, price: price })}>-</button>
             </div>          
-      <MdDelete size="1.5rem" onClick={()=>dispatch({type:"REMOVE-FROM-CART" , payload: _id ,price : price})} />
+      <MdDelete size="1.5rem" onClick={()=>Remove_from_cart()} />
       
       </div>
     </div>

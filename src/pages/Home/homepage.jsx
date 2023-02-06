@@ -2,7 +2,7 @@ import "./homepage.css"
 import React from "react";
 import {Link} from "react-router-dom"
 import { Footer, Navbar } from "../../component";
-import {  audiobook12, banner1, doglapan, gautamAdani, iAmonir, sub_banner1, sub_banner2, zakir , life, banner2 } from "../../Images";
+import {  audiobook12, banner1, doglapan, gautamAdani, iAmonir, sub_banner1, sub_banner2, zakir , life, banner2 , gardenUp ,thecompany ,multibagger ,book1 } from "../../Images";
 
 function Home() {
   return (
@@ -12,13 +12,51 @@ function Home() {
       
       <div >
         <img src={banner1} alt=""  className="banner"/>
-      </div>
-      <div className="explore-container">
-        <h2>Explore our most famous Author book and Bestseller books </h2>
-      <button className="explore-button">
-        <Link to="/productlist">Explore more</Link>
-        </button>
         </div>
+        
+<div className="explore-container">
+          <h2>Explore our most famous Author book and Bestseller books </h2>
+          
+<div className="product-container-explore ">
+        
+            
+        <div className="container-home">
+          <img src={multibagger} alt="" className="books" />
+          <h4 className="margin0">Multibegger Stock</h4>
+          <p className="margin0">Prasenjit Paul</p>
+          
+         </div>
+        
+
+        <div className="container-home">
+          <img src={gardenUp} alt="" className="books" />
+          <h4 className="margin0">Garden UP</h4>
+          <p className="margin0">Dr Ekta Chaudhary</p>
+        </div>
+         <div className="container-home  ex-btn">
+          
+          <button className="explore-button ">
+            <Link to="/productlist" className="ex-link">Explore more</Link>
+            </button>
+         
+        </div> 
+
+        <div className="container-home">
+          <img src={thecompany} alt="" className="books" />
+           <h4 className="margin0">The Company we Keep</h4>
+          <p className="margin0">Divya Khanna</p>
+
+        </div>
+        
+        <div className="container-home">
+          <img src={book1} alt="" className="books" />
+           <h4 className="margin0">Build Don't Talk</h4>
+          <p className="margin0">Raj Shamani</p>
+
+        </div>
+
+    </div>
+</div>
       
         <h1 className="topheading">Catch up on what we're reading</h1>
       <div className="sub">

@@ -32,7 +32,7 @@
     justify-content: space-around;
     align-items: baseline;
 }
-.container-home:hover{
+.container-home{
   font-size: large;
 
 }
@@ -45,8 +45,23 @@
 .explore-container{
     margin: 20px;
 }
+.ex-btn{
+
+}
 .explore-button{
-        padding: 10px;
-            text-decoration: none;
-            font-size: 20px;
+    padding: 30px;
+    background-color: black;
+    margin: 30px;
+    height: 90px;
+}
+
+.product-container-explore{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ex-link{
+        text-decoration: none;
+    color: white;
+    font-size: 20px;
 }

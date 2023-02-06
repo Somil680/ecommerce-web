@@ -56,8 +56,20 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     routes() {
-      this.namespace = "api";
+      this.namespace = "/api";
       // auth routes (public)
+       this.post('/oauth/token', function() {
+    return {
+      access_token: 'some-access-token',
+      expires_in: 3600
+    };
+  });
+    //   this.post('/oauth/token', function() {
+    // return {
+    //   access_token: 'some-access-token',
+    //   expires_in: 3600
+    // };
+  // });
       this.post("/auth/signup", signupHandler.bind(this));
       this.post("/auth/login", loginHandler.bind(this));
 
@@ -88,3 +100,13 @@ export function makeServer({ environment = "development" } = {}) {
     },
   });
 }
+// export default function() {
+//   this.namespace = '/api';
+
+//   this.post('/oauth/token', function() {
+//     return {
+//       access_token: 'some-access-token',
+//       expires_in: 3600
+//     };
+//   });
+// }
