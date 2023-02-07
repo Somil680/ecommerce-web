@@ -30,7 +30,7 @@ return <>
         <div className="Checkout-price-data">
             <Price />
 
-            <Link className='checkout-btn'>Place Order</Link>
+            <Link className='checkout-btn'>Check Out</Link>
  </div>     
     </div>
     <hr />

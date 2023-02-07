@@ -40,7 +40,7 @@ return <>
           <Price />
           {auth.isAuth ?
             <div className="check-out-btn">
-              <button className="checkout-btn"><Link className="checkout-btn" to="/Checkout">Check Out</Link></button>
+              <button className="checkout-btn"><Link className="checkout-btn" to="/Checkout">Place Order</Link></button>
             </div>
             : Navigate("/Login")}
         

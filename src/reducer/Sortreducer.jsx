@@ -1,8 +1,8 @@
 
 const sortInitalstate = {
-    sortby: null , 
-    Categoryfilter: null,
-    Discountfilter:null
+    sortby:"", 
+    Categoryfilter:"",
+    Discountfilter:""
 };
 
 const SortreducerFunc = (state, action) => {
@@ -18,7 +18,7 @@ const SortreducerFunc = (state, action) => {
             return {
                 ...state,
                  sortby: "", 
-                 Categoryfilter:  "",
+                 Categoryfilter: "",
                  Discountfilter: ""
             
             }
